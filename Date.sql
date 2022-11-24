@@ -10,15 +10,15 @@ DECLARE
 -- Run CTE loop
 WITH dates as (
 	SELECT 
-		@StartDate															AS 'Date',
-		DATEADD(DAY, -DAY(@StartDate)+1, @StartDate)						AS 'Month',
-		DATENAME(MONTH, @StartDate)											AS 'MonthName',
-		DATEPART(MONTH, @StartDate)											AS 'MonthNumber',
-		DATEADD(DAY, -DATEPART(WEEKDAY, @StartDate) +1, @StartDate)			AS 'WeekStart',
-		DATEADD(DAY, 7 - DATEPART(WEEKDAY, @StartDate), @StartDate)			AS 'WeekEnd',
-		DATEPART(WEEKDAY, @StartDate)										AS 'WeekDayNumber',
-		DATENAME(WEEKDAY, @StartDate)										AS 'WeekDayName',
-		DATEPART(YEAR, @StartDate)											AS 'Year'
+		@StartDate								AS 'Date',
+		DATEADD(DAY, -DAY(@StartDate)+1, @StartDate)				AS 'Month',
+		DATENAME(MONTH, @StartDate)						AS 'MonthName',
+		DATEPART(MONTH, @StartDate)						AS 'MonthNumber',
+		DATEADD(DAY, -DATEPART(WEEKDAY, @StartDate) +1, @StartDate)		AS 'WeekStart',
+		DATEADD(DAY, 7 - DATEPART(WEEKDAY, @StartDate), @StartDate)		AS 'WeekEnd',
+		DATEPART(WEEKDAY, @StartDate)						AS 'WeekDayNumber',
+		DATENAME(WEEKDAY, @StartDate)						AS 'WeekDayName',
+		DATEPART(YEAR, @StartDate)						AS 'Year'
 
 	UNION ALL
 
